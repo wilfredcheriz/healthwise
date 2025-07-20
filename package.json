@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
+    
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -29,7 +29,7 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^15.5.3",
     "react-slick": "^0.30.3",
-    "resend": "^4.6.0",
+    "resend": "^4.7.0",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

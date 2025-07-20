@@ -67,12 +67,15 @@ export default function App({ Component, pageProps }) {
     if (router.pathname === '/' && !hasLoaded) {
       setLoading(true);
       sessionStorage.setItem('hasLoaded', 'true');
+
+      // Keep loader visible for 3 seconds
+      const timeout = setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+
+      return () => clearTimeout(timeout);
     }
   }, [router.pathname]);
-
-  const handleLoaderComplete = () => {
-    setLoading(false);
-  };
 
   const toggleColorMode = () => {
     const newMode = mode === 'light' ? 'dark' : 'light';
@@ -112,7 +115,7 @@ export default function App({ Component, pageProps }) {
         />
 
         {loading ? (
-          <SpineLoader onComplete={handleLoaderComplete} />
+          <SpineLoader />
         ) : (
           <>
             <Navbar toggleTheme={toggleColorMode} currentMode={mode} />

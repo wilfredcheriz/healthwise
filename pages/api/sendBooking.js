@@ -7,11 +7,19 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // ✅ Destructure price from body
   const { fullName, contact, symptoms, date, medication, price } = req.body;
 
-  // ✅ Validate all required fields
-  if (!fullName || !contact || !date || !medication || !price) {
+  // Debug logs to help with diagnosing issues
+  console.log('Received data:', req.body);
+
+  // Validation with .trim() to ensure non-empty strings
+  if (
+    !fullName?.trim() ||
+    !contact?.trim() ||
+    !medication?.trim() ||
+    !date ||
+    !price
+  ) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
@@ -33,7 +41,7 @@ You have a new medication booking:
     });
 
     if (error) {
-      console.error('Email error:', error);
+      console.error('Email sending failed:', error);
       return res.status(500).json({ error: 'Failed to send email' });
     }
 

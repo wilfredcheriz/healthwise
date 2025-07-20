@@ -23,7 +23,7 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Medicines', href: '/products' },
   { label: 'Events', href: '/events' },
-  { label: 'Book Medication', href: '/book-medication' },
+
   { label: 'Contact', href: '/contact' },
   { label: 'About', href: '/about' },
 ];
