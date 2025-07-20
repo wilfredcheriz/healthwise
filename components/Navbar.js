@@ -108,7 +108,7 @@ export default function Navbar({ toggleTheme, currentMode }) {
                 whiteSpace: 'nowrap',
               }}
             >
-            HEALTHWISE & WELLNESS
+            HEALTHWISE 
             </Typography>
           </Box>
 
