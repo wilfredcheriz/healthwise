@@ -88,7 +88,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Healthwise</title>
+        <title>Healthwise & Wellness</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
