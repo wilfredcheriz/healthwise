@@ -1,9 +1,15 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+});
+
 const nextConfig = {
   reactStrictMode: true,
   eslint: {
-    ignoreDuringBuilds: true, // ✅ This disables ESLint during builds (e.g., on Vercel)
+    ignoreDuringBuilds: true,
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
